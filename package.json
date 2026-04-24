@@ -1,0 +1,68 @@
+{
+  "name": "hoogle-search",
+  "displayName": "Hoogle VS Code",
+  "description": "Search Hoogle",
+  "publisher": "miruku-calsys",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/misaka18931/vscode-hoogle-search.git"
+  },
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.116.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "type": "module",
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "hoogle-search.searchHoogle",
+        "title": "Search Hoogle"
+      }
+    ],
+    "configuration": {
+      "title": "Hoogle VS Code",
+      "properties": {
+        "hoogle-search.useLocalInstance": {
+          "type": "boolean",
+          "default": true,
+          "description": "Search with local hoogle command."
+        },
+        "hoogle-search.hooglePath": {
+          "type": "string",
+          "default": "hoogle",
+          "description": "Path to the Hoogle executable when local instance is used."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/html-to-text": "^9.0.4",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.116.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.39.3",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1"
+  },
+  "dependencies": {
+    "html-to-text": "^9.0.5",
+    "node-fetch": "^3.3.2",
+    "node-html-parser": "^7.1.0",
+    "parse5": "^8.0.1"
+  }
+}
