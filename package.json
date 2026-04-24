@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/misaka18931/vscode-hoogle-search.git"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.116.0"
   },
